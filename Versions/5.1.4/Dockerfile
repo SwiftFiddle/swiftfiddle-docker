@@ -1,1 +1,1 @@
-FROM swift:5.1.4
+FROM swift:5.4.2

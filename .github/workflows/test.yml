@@ -1,0 +1,22 @@
+name: Test
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: |
+          set -ex
+
+          for dir in Versions/*; do
+            if [ -d "$dir" ]; then
+              docker build --rm --no-cache "$dir"
+            fi
+          done

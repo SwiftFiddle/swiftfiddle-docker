@@ -20,4 +20,4 @@ jobs:
           set -ex
 
           version=4.0
-          docker build --rm --tag "swiftfiddle/swift:$version" "Versions/$dir" && docker push "swiftfiddle/swift:$version"
+          docker build --rm --tag "swiftfiddle/swift:$version" "Versions/$version" && docker push "swiftfiddle/swift:$version"

@@ -2,7 +2,7 @@ name: Build and Push Docker Images
 on:
   push:
     branches: [main]
-    paths: [Versions/3.0.1/**]
+    paths: [Versions/3.0/**]
   workflow_dispatch:
 
 jobs:
@@ -19,5 +19,5 @@ jobs:
         run: |
           set -ex
 
-          version=3.0.1
-          docker build --rm --tag "swiftfiddle/swift:$version" "Versions/$dir" && docker push "swiftfiddle/swift:$version"
+          version=3.0
+          docker build --rm --tag "swiftfiddle/swift:$version" "Versions/$version" && docker push "swiftfiddle/swift:$version"

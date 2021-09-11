@@ -16,7 +16,7 @@ jobs:
           set -ex
 
           for dir in Versions/*; do
-            if [ -d "$dir" && ("$dir" == 5.3* || "$dir" == 5.4*) ]; then
+            if [[ -d "$dir" && ("$dir" == 5.3* || "$dir" == 5.4*) ]]; then
               docker build --rm --no-cache "$dir"
               docker system prune -a -f
             fi

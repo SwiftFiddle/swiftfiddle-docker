@@ -21,3 +21,4 @@ jobs:
 
           version=5.4.3
           docker build --rm --tag "swiftfiddle/swift:$version" "Versions/$version" && docker push "swiftfiddle/swift:$version"
+          docker image tag "swiftfiddle/swift:$version" "swiftfiddle/swift:stable" && docker push "swiftfiddle/swift:stable"

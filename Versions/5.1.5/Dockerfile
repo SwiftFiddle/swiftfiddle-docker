@@ -1,1 +1,1 @@
-FROM swift:5.1.5-bionic
+FROM swift:5.5.0-bionic

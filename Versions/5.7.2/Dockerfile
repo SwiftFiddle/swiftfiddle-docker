@@ -68,5 +68,7 @@ RUN set -e; \
     && rm -rf "$GNUPGHOME" swift.tar.gz.sig swift.tar.gz \
     && apt-get purge --auto-remove -y curl
 
-# Print Installed Swift Version
-RUN swift --version
+COPY ./_Packages/ ./swiftfiddle.com/_Packages/
+RUN cd ./swiftfiddle.com/_Packages/ \
+    && swift build -c release \
+    && rm -rf .build/checkouts/ .build/repositories/

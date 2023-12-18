@@ -54,5 +54,6 @@ RUN set -e; \
     && rm -rf "$GNUPGHOME" swift.tar.gz.sig swift.tar.gz \
     && apt-get purge --auto-remove -y curl
 
-# Print Installed Swift Version
-RUN swift --version
+RUN echo 'int isatty(int fd) { return 1; }' | \
+  clang -O2 -fpic -shared -ldl -o faketty.so -xc -
+RUN strip faketty.so && chmod 400 faketty.so

@@ -58,5 +58,6 @@ RUN SWIFT_URL=https://swift.org/builds/$SWIFT_BRANCH/$(echo "$SWIFT_PLATFORM" | 
     && rm -r "$GNUPGHOME" swift.tar.gz.sig swift.tar.gz \
     && chmod -R o+r /usr/lib/swift
 
-# Print Installed Swift Version
-RUN swift --version
+RUN echo 'int isatty(int fd) { return 1; }' | \
+  clang -O2 -fpic -shared -ldl -o faketty.so -xc -
+RUN strip faketty.so && chmod 400 faketty.so

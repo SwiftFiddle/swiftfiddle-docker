@@ -1,4 +1,4 @@
-FROM swift:5.7.3-focal
+FROM swift:5.10.0-focal
 
 COPY ./_Packages/ ./swiftfiddle.com/_Packages/
 RUN cd ./swiftfiddle.com/_Packages/ \

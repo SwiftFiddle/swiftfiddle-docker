@@ -1,4 +1,4 @@
-FROM swift:5.2.3
+FROM swift:6.3.3
 
 RUN echo 'int isatty(int fd) { return 1; }' | \
   clang -O2 -fpic -shared -ldl -o faketty.so -xc -
